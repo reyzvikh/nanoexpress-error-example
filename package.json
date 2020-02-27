@@ -1,0 +1,22 @@
+{
+  "name": "nanoexpress-error-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reyzvikh/nanoexpress-error-example.git"
+  },
+  "author": "reyzvikh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reyzvikh/nanoexpress-error-example/issues"
+  },
+  "homepage": "https://github.com/reyzvikh/nanoexpress-error-example#readme",
+  "dependencies": {
+    "nanoexpress-pro": "^1.10.10"
+  }
+}
