@@ -4,17 +4,17 @@ const Route = require('nanoexpress-pro/cjs/Route');
 const app = nanoexpress();
 const router = new Route();
 
-function requestHandler(req, res) {
-  throw new Error('failed');
-}
+app.setErrorHandler((err, req, res) => {
+  res.send({ error: err.message });
+});
 
-function errorHandler(err, req, res) {
-  console.log('Something was wrong');
-  res.send({ message: err.message })
-}
-
-app.setErrorHandler(errorHandler);
 app.use('/', router);
-router.get('/', requestHandler);
+router.get('/foo', async (req, res) => {
+  throw new Error('Something was wrong in GET /foo');
+  res.send({ status: 'success' });
+});
+router.get('/bar', async () => {
+  throw new Error('Something was wrong in GET /bar');
+});
 
 app.listen(4000);
